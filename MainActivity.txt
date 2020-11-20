@@ -1,0 +1,23 @@
+package com.anurag.listviewwithimage;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.ListView;
+
+public class MainActivity extends AppCompatActivity {
+    ListView lvProgram;
+    String[] programName = {"Batman","Maze Runner","Pirates of Carrabien","Extraction","Hollywood"};
+    String[] programDescription = {"Description","Description","Description","Description","Description"};
+    int[] programImages = {R.drawable.a,R.drawable.b,R.drawable.c,R.drawable.d,R.drawable.e};
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        lvProgram = findViewById(R.id.lvProgram);
+        lvProgram = findViewById(R.id.lvProgram);
+        ProgramAdapter programAdapter = new ProgramAdapter(this,programName,programImages,programDescription);
+        lvProgram.setAdapter(programAdapter);
+    }
+}
